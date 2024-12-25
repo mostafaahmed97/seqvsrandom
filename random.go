@@ -22,19 +22,18 @@ func randomIO(file string) int {
 		panic(err)
 	}
 
-	var chunkSize int64 = 100
+	var chunkSize int64 = 1000
 	nChunks := i.Size() / chunkSize
 
-	starts := []int64{}
+	starts := make([]int64, nChunks)
 	for i := range nChunks {
-		starts = append(starts, i)
+		starts[i] = i
 	}
 
-	// shuffle slice
-	for i := 0; i < len(starts); i++ {
-		j := rand.Intn(i + 1)
+	// randomize order
+	rand.Shuffle(len(starts), func(i, j int) {
 		starts[i], starts[j] = starts[j], starts[i]
-	}
+	})
 
 	N := 0
 	b := make([]byte, chunkSize)
