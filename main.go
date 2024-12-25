@@ -36,9 +36,10 @@ func main() {
 			fsize, _ = strconv.Atoi(os.Args[3])
 		}
 
+		fmt.Printf("writing %d bytes to %s\n", fsize, file)
 		n := generate(file, fsize)
+		fmt.Printf("done, %d bytes written\n", n)
 
-		fmt.Printf("wrote %d bytes to %s\n", n, "data.txt")
 	} else if mode == "seq" {
 		defer totalTime(time.Now(), "SequentialIO")
 
