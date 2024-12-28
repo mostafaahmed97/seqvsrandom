@@ -46,7 +46,7 @@ func main() {
 		n := sequentialIO(file)
 		fmt.Printf("read %d bytes sequentially\n", n)
 	} else if mode == "rnd" {
-		defer totalTime(time.Now(), "RadomIO")
+		defer totalTime(time.Now(), "RandomIO")
 
 		n := randomIO(file)
 		fmt.Printf("read %d bytes randomly\n", n)
