@@ -6,7 +6,7 @@
 
 A simple Go experiment to measure and compare the performance difference between sequential and random disk I/O operations.
 
-Read the [blog post](https://mostafaahmed.hashnode.dev/is-random-disk-io-really-that-bad)
+Read the [blog post](https://mostafaahmed.hashnode.dev/is-random-io-really-that-bad)
 
 # Usage
 
